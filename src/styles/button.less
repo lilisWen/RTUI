@@ -1,0 +1,199 @@
+@btn-prefix:~'rt-button';
+@btn-disable: ~'.@{btn-prefix}-disabled';
+
+.@{btn-prefix} {
+    display: inline-block;
+    margin-bottom: 0; 
+    border: 1px solid transparent;
+    background-image: none; 
+    cursor: pointer;
+    font-weight: 400;
+    outline: none;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 3px;
+    
+    &-default{
+        .btn-animation('default',#fff,#d9d9d9,#333,rgba(230, 230, 230,.5));
+        transition: background .15s ease-in-out;
+        position: relative;
+
+        &:active{
+            animation: btn-focus-default .2s ease-out;
+            outline: none;
+        }
+
+        &:hover,
+        &:focus{
+            border-color: #c1c8d0;
+            background-color: #e6e6e6;
+            color: #333;
+        }
+        &.@{btn-prefix}-outline {
+            .btn-outline(transparent;#d9d9d9; #d9d9d9);
+        }
+    }
+    &-primary{
+        .btn-animation('primary', #39f,transparent,#fff,rgba(0, 127, 255,0.2));
+
+        &:active{
+            animation: btn-focus-primary .1s ease-out;
+        }
+        &:hover{
+            background-color: #007fff;
+            border-color:#39f;
+        }
+        &.@{btn-prefix}-outline {
+            .btn-outline(transparent;#39f; #39f);
+        }
+    }
+
+    &-dashed{
+        .btn-animation('secondary',#fff,#d9d9d9,#333,transparent);
+
+        border-style: dashed;
+        &:active{
+            animation:btn-focus-secondary .1s ease-out
+        }
+        &:hover{
+            border-color:#39f;
+            color: #39f
+        }
+       
+    }
+
+    &-success{
+        .btn-animation('success',#0c6, transparent, #fff, rgba(0, 153, 77,0.2));
+
+        &:active{
+            animation:btn-focus-success .1s ease-out
+        }
+        &:hover{
+            background-color: #00994d;
+            border-color: #0c6;
+        }
+        &.@{btn-prefix}-outline {
+            .btn-outline(transparent;#0c6; #0c6);
+        }
+    }
+
+    &-danger{
+        .btn-animation('danger',#f85555 , transparent, #fff, rgba(246, 36, 36,0.1));
+
+        &:active{
+            animation:btn-focus-danger .1s ease-out
+        }
+        &:hover{
+            background-color: #f62424;
+            border-color: #f85555;
+        }
+        &.@{btn-prefix}-outline {
+            .btn-outline(transparent;#f85555; #f85555);
+        }
+    }
+
+    &-link{
+        .btn-animation('link', #fff,transparent, #39f, transparent);
+
+        &:hover{
+            color: #007fff;
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    &-loading svg{
+        animation: spin 1s linear infinite;
+        margin-right: 4px;
+    }
+    &-disable{
+        color: #00000040;;
+        border-color: #d9d9d9;
+        background-color: #e6e6e6;
+        cursor: not-allowed;
+    }
+    &-large{
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+    &-small{
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+  
+    &-group{
+        .@{btn-prefix}{
+            position: relative;
+            margin-left: 0px;
+            border-right-width: 0px;
+            border-left-width:0px;
+            border-radius: 0px;
+
+            &:before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 50%;
+                border-left: 1px solid;
+                border-left-color:#d9d9d9 ;
+                content: ' ';
+                transform: translateY(-50%);
+                z-index: 1; 
+            }
+
+            
+            &:first-child {
+                margin-left: 0;
+                border-left-width: 1px;
+        
+                &:before {
+                    display: none;
+                }
+            }
+    
+            &:last-child {
+            border-right-width: 1px;
+            }
+            &:first-child:not(:last-child) {
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+        
+            &:last-child:not(:first-child) {
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+    }
+   
+}
+.btn-animation(@name,@bg-color,@border-color,@font-color,@animation-color){
+    background-color: @bg-color;
+    color: @font-color;
+    border-color: @border-color;
+    transition: background 0.15s ease-in-out;
+    @animation-name:~'btn-focus-@{name}';
+    @keyframes @animation-name{
+        0%{
+           box-shadow: none;
+        }
+        100%{
+            box-shadow: 0px 0px 0px 5px @animation-color;
+        }
+    }
+}
+.btn-outline(@bgcolor,@border-color,@font-color){
+    background-color: @bgcolor;
+    border-color: @border-color;
+    color: @font-color;
+}

@@ -1,0 +1,102 @@
+@btn-prefix:~'rt-menu';
+
+
+.@{btn-prefix}-horizontal{
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 0px;
+    margin-bottom: 30px;
+    list-style: none;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    box-shadow: #d9d9d9;
+    .@{btn-prefix}-item{
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: .1s linear;
+        border-bottom: 2px solid transparent;
+        &:hover:not(.@{btn-prefix}-disable):not(.@{btn-prefix}-active),&:focus{
+            text-decoration: none;
+            color: #39f;
+        }
+    }
+    .@{btn-prefix}-active{
+        color: #3399ff;
+        border-bottom: 2px solid #3399ff;
+    }
+    .@{btn-prefix}-disable{
+        color: #d9d9d9 !important;
+        cursor: not-allowed;
+    }
+    .@{btn-prefix}-submenu-item {
+        position: relative;
+        .@{btn-prefix}-submenu{
+            position: absolute;
+            left: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,.15);
+            .@{btn-prefix}-item{
+                padding:0 30px;
+                border: none;
+            }
+        }
+    }
+}
+.@{btn-prefix}-vertical{
+    flex-direction: column;
+    border-bottom: 0px;
+    border-right: 1px solid #d9d9d9;
+    list-style: none;
+    padding: 0;
+    .@{btn-prefix}-item{
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: .1s linear;
+        border-left: 2px solid transparent;
+        &:hover:not(.@{btn-prefix}-disable):not(.@{btn-prefix}-active),&:focus{
+            text-decoration: none;
+            color: #39f;
+        }
+    }
+    .@{btn-prefix}-active{
+        color: #39f;
+        border-right: 2px solid #39f;
+        background-color: #e6f7ff;;
+    }
+    .@{btn-prefix}-disable{
+        color: #d9d9d9 !important;
+        cursor: not-allowed;
+    }
+    .@{btn-prefix}-submenu-item{
+        padding:0;
+        .@{btn-prefix}-submenu-title{
+            padding:0 20px
+         }
+    }
+}
+.@{btn-prefix}-submenu-item{
+    padding:0;
+    .@{btn-prefix}-submenu{
+        display: none;
+        list-style: none;
+        white-space: nowrap;
+        padding-left: 0;
+        .@{btn-prefix}-item{
+            padding-left: 44px;
+            padding-right: 20px;
+            cursor: pointer;
+            color: #000000;
+        }
+        .@{btn-prefix}-active{
+            color: #fff;
+            border-left: 1px solid #fff;
+            background-color: #39f;
+        }
+        &-open{
+            display: block;
+        }
+    }
+    .@{btn-prefix}-submenu-title{
+       display: flex;
+      align-items: center;
+    }
+}
+

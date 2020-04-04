@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationDir": "typings",
+    "module": "commonjs",
+    "target": "es5",
+    "strict": false,
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": false
+  },
+  "include": [
+    "./src/"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
