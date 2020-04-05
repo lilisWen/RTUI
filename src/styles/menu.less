@@ -2,18 +2,21 @@
 
 
 .@{btn-prefix}-horizontal{
+
     display: flex;
     flex-wrap: nowrap;
+    font-size: 14px;
     padding-left: 0px;
     margin-bottom: 30px;
     list-style: none;
     border-bottom: 1px solid rgb(232, 232, 232);
     box-shadow: #d9d9d9;
+   
     .@{btn-prefix}-item{
         padding: 10px 20px;
         cursor: pointer;
-        transition: .1s linear;
-        border-bottom: 2px solid transparent;
+    
+        border-bottom: 4px solid transparent;
         &:hover:not(.@{btn-prefix}-disable):not(.@{btn-prefix}-active),&:focus{
             text-decoration: none;
             color: #39f;
@@ -21,7 +24,8 @@
     }
     .@{btn-prefix}-active{
         color: #3399ff;
-        border-bottom: 2px solid #3399ff;
+        transition: .4s ease-in-out;
+        border-bottom: 4px solid #3399ff;
     }
     .@{btn-prefix}-disable{
         color: #d9d9d9 !important;
@@ -32,15 +36,18 @@
         .@{btn-prefix}-submenu{
             position: absolute;
             left: 0;
+            top: 44px;
             box-shadow: 0 2px 8px rgba(0,0,0,.15);
+            background-color: #fff;
             .@{btn-prefix}-item{
-                padding:0 30px;
+                padding:10px 30px;
                 border: none;
             }
         }
     }
 }
 .@{btn-prefix}-vertical{
+    font-size: 14px;
     flex-direction: column;
     border-bottom: 0px;
     border-right: 1px solid #d9d9d9;
@@ -95,8 +102,18 @@
         }
     }
     .@{btn-prefix}-submenu-title{
-       display: flex;
-      align-items: center;
+        display: flex;
+        align-items: center;
+        .arrow-icon{
+            margin-left: 3px;
+            transition: .3s ease-in-out;
+        }
+    }
+    &:hover{
+        .arrow-icon{
+            transform: rotate(180deg);
+        }
+       
     }
 }
 
