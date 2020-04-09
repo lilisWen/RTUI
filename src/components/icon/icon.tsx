@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './importall.js'
 import classNames from 'classnames';
-import { IconClass } from '../../styles/'
+import { IconClass } from '../../styles'
 import { tuple } from '../../utils/type'
 
 const IconThemes = tuple('light', 'dark')

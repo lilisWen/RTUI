@@ -1,0 +1,73 @@
+@pop-prefix:~'rt-popcover';
+
+.@{pop-prefix} {
+    &-wrapper{
+        position: absolute;
+        z-index: 90;
+        background-color: transparent;
+    }
+    &-top {
+        transform: translateX(-50%) translateY(-100%);
+        padding-bottom: 10px;
+    }
+    &-bottom {
+        transform: translateX(-50%);
+        padding-top: 10px;
+    }
+    &-left {
+        transform: translateX(-100%) translateY(-50%);
+        padding-right: 10px;
+    }
+    &-right {
+        transform: translateY(-50%);
+        padding-left: 10px;
+    }
+    &-content{
+        border-radius: 4px;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+        position: relative;
+        background-color: #fff; 
+        &-title {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.65);
+            box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.1);
+            padding: 5px 20px;
+        }
+        &-list{
+            padding: 5px 20px;
+        }
+        &-arrow{
+            position: absolute;
+            border: 5px solid;
+            width: 0;
+            height: 0;
+            border-color: #fff;
+            &-top {
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%) rotateZ(45deg);
+                box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+            }
+            &-bottom {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+                box-shadow: -3px -3px 7px rgba(0, 0, 0, 0-07);
+            }
+            &-left {
+                top: 50%;
+                right: 0;
+                transform: translateX(50%) translateY(-50%) rotateZ(45deg);
+                box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
+            }
+            &-right {
+                top: 50%;
+                left: 0;
+                transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+                box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
+            }
+        }
+    }
+}

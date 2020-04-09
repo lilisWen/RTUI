@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
 import ButtonExample from './examples/buttonexample'
-import { Button, ButtonGroup } from './components/button'
+import { Button, ButtonGroup } from './components/Button'
 import { Menu, MenuItem, SubMenu } from './components/menu'
 import MenuExample from './examples/menuexample'
 import {
@@ -9,6 +9,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+import PopcoverExample from './examples/popcoverexample'
 
 ReactDom.render(
     <Router>
@@ -28,11 +29,13 @@ ReactDom.render(
                         <MenuItem ><Link to="/button-example">Grid 栅格</Link></MenuItem>
                         <MenuItem disable> 导航</MenuItem>
                         <MenuItem ><Link to="/menu-example">Menu 菜单</Link></MenuItem>
+                        <MenuItem ><Link to="/popcover-example">Popcover 气泡卡片</Link></MenuItem>
                     </Menu>
                 </aside>
                 <div className="container">
                     <Route path="/button-example" component={ButtonExample}></Route>
                     <Route path="/menu-example" component={MenuExample}></Route>
+                    <Route path="/popcover-example" component={PopcoverExample}></Route>
                 </div>
             </main>
             <footer className="footer"></footer>

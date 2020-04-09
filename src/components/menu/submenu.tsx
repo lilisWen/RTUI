@@ -4,7 +4,8 @@ import classNames from 'classnames'
 import { MenuContext } from './menu'
 import { MenuClass } from '../../styles'
 import { MenuItemProps } from './menuitem'
-import Icon from '../icon/icon'
+import Icon from '../Icon/icon'
+import Transition from '../Transition/transition'
 export interface SubMenuProps {
     index?: string,
     className?: string,
@@ -49,19 +50,25 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
                 console.error("Warning: SubMenu has a child not MenuItem")
             }
         })
-        return <ul className={classNames(MenuClass('submenu', {
-            'submenu-open': menuOpen
-        }))}>
-            {subMenuItems}
-        </ul >
+        return <Transition in={menuOpen}
+            timeout={300} animation="zoom-in-top">
+            <ul className={classNames(MenuClass('submenu', {
+                'submenu-open': menuOpen
+            }))}>
+                {subMenuItems}
+            </ul ></Transition>
     }
-    return (<li className={classnames} {...hoverEvents} >
-        <div className={classNames(MenuClass('submenu-title'))} {...clickEvents}>
-            {title}
-            <Icon name="arrow" className="arrow-icon"></Icon>
-        </div>
-        {renderSubMenuItem()}
-    </li>)
+    return (
+
+        <li className={classnames} {...hoverEvents} >
+            <div className={classNames(MenuClass('submenu-title'))} {...clickEvents}>
+                {title}
+                <Icon name="arrow" className="arrow-icon"></Icon>
+            </div>
+            {renderSubMenuItem()}
+
+        </li >
+    )
 }
 SubMenu.displayName = 'SubMenu'
 export default SubMenu

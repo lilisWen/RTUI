@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { ButtonClass } from '../../styles/index'
 import { tuple } from '../../utils/type';
-import Icon from "../icon/icon"
+import Icon from "../Icon/icon"
 /*使用tuple函数生成一个类型*/
 /*
 type与interface的异同
