@@ -9,7 +9,7 @@ import { MenuItemProps } from "./menuitem"
 const MenuModes = tuple('vertical', 'horizontal')
 type MenuMode = (typeof MenuModes)[number]
 type SelectCallback = (selectIndex: string) => void
-interface MenuProps {
+export interface MenuProps {
     defaultIndex?: string;
     className?: string;
     mode?: MenuMode;

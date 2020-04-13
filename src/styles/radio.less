@@ -1,0 +1,86 @@
+@radio-prefix:~'rt-radio';
+
+.@{radio-prefix}{
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 22px;
+    &-vertical {
+        flex-direction: column;
+    }
+    &-option{
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        .label-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid;
+            border-color: rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            transition: all .3s cubic-bezier(.78, .14, .15, .86);
+            &::after {
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                content: '';
+                display: block;
+                width: 8px;
+                height: 8px;
+                background-color: #1890ff;;
+                border-radius: 50%;
+                opacity: 0;
+                transform: scale(0);
+                transition: all .3s cubic-bezier(.78, .14, .15, .86);
+            }
+        }
+        &:hover {
+            .label-dot {
+                border-color: #1890ff;
+            }
+        }
+        .label-text {
+            padding: 0 8px;
+            background-color: #fff;
+            transition: all .3s cubic-bezier(.78, .14, .15, .86);
+        }
+    }
+    &-checked {
+        .label-dot {
+            border-color: #1890ff;
+            &::after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+    &-disable {
+        &:hover{
+            .label-dot{
+                border-color: #d9d9d9;
+            }
+        }
+        .label-dot {
+            cursor: not-allowed;
+            border-color: #d9d9d9;
+            background-color: #e6e6e6;
+            &::after {
+                background-color: rgba(0, 0, 0, 0.35);
+            }
+        }
+        .label-text {
+            cursor: not-allowed;
+            color: rgba(0, 0, 0, 0.25);
+            &:hover {
+                color: rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}

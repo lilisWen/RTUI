@@ -4,12 +4,15 @@ import ButtonExample from './examples/buttonexample'
 import { Button, ButtonGroup } from './components/Button'
 import { Menu, MenuItem, SubMenu } from './components/menu'
 import MenuExample from './examples/menuexample'
+import InputExample from './examples/inputexample'
+import RadioExample from './examples/radioexample'
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
 import PopcoverExample from './examples/popcoverexample'
+import { InputClass } from './styles'
 
 ReactDom.render(
     <Router>
@@ -30,12 +33,16 @@ ReactDom.render(
                         <MenuItem disable> 导航</MenuItem>
                         <MenuItem ><Link to="/menu-example">Menu 菜单</Link></MenuItem>
                         <MenuItem ><Link to="/popcover-example">Popcover 气泡卡片</Link></MenuItem>
+                        <MenuItem ><Link to="/input-example">Input 输入框</Link></MenuItem>
+                        <MenuItem ><Link to="/radio-example">Radio 单选框</Link></MenuItem>
                     </Menu>
                 </aside>
                 <div className="container">
                     <Route path="/button-example" component={ButtonExample}></Route>
                     <Route path="/menu-example" component={MenuExample}></Route>
                     <Route path="/popcover-example" component={PopcoverExample}></Route>
+                    <Route path="/input-example" component={InputExample}></Route>
+                    <Route path="/radio-example" component={RadioExample}></Route>
                 </div>
             </main>
             <footer className="footer"></footer>

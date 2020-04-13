@@ -10,17 +10,17 @@ type与interface的异同
 只有type可以定义基本类型、联合类型还可使用typeof获取变量类型生成数组
 */
 const ButtonTypes = tuple('default', 'primary', 'dashed', 'success', 'danger', 'link')
-type ButtonType = (typeof ButtonTypes)[number]
+export type ButtonType = (typeof ButtonTypes)[number]
 const ButtonSizes = tuple('small', 'default', 'large')
-type ButtonSize = (typeof ButtonSizes)[number]
+export type ButtonSize = (typeof ButtonSizes)[number]
 const ButtonHTMLTypes = tuple('submit', 'button', 'reset')
 export type ButtonHtmlType = (typeof ButtonHTMLTypes)[number]
 const ButtonShapes = tuple('round', 'circle')
-type ButtonShape = (typeof ButtonShapes)[number]
+export type ButtonShape = (typeof ButtonShapes)[number]
 const ButtonPositions = tuple('right', 'left')
-type ButtonPosition = (typeof ButtonPositions)[number]
+export type ButtonPosition = (typeof ButtonPositions)[number]
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     htmlType?: ButtonHtmlType;//button的基础type
     size?: ButtonSize;//button的大小
     type?: ButtonType;//button的样式
@@ -62,18 +62,21 @@ export default class button extends React.Component<ButtonProps> {
     };
 
     renderButton = () => {
-        const { children, htmlType, size, position, type, href, disable, icon, loading, shape, outline, ...restProps } = this.props;
+        const { children, htmlType, size, position, type, href, disable, icon, loading, shape, outline, className, ...restProps } = this.props;
         const classnames = classNames(
-            ButtonClass('*', position, shape, disable ? '' : type, {
+            ButtonClass('*', position, shape, type, {
                 large: size === 'large',
                 small: size === 'small',
-                disable,
+                disable: disable,
                 outline
             }),
-            this.props.className
+            className
         )
         const iconNode = <Icon name={icon} style={React.Children.count(children) >= 1 ? { marginRight: '4px' } : null}></Icon>
-        return <button className={classnames} type={htmlType} {...restProps}>
+        if (type === 'link') {
+            return <a href={href} className={classnames}>{children}</a>
+        }
+        return <button className={classnames} type={htmlType} disabled={disable} {...restProps}>
             {loading ? <span className={ButtonClass('loading')}><Icon name="ring" /></span> : ""}
             {position === 'left' ? (icon !== '' ? iconNode : null) : null}
             {children}
