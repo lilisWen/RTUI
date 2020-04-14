@@ -26,7 +26,7 @@ const Option: React.FC<OptionProps> = (props) => {
         }
         onClick(value, e)
     }
-    const classnames = classNames(RadioClass('option', {
+    const classnames = classNames(RadioClass('option', radioStyle, {
         checked: value === checkedValue,
         disable,
     }))

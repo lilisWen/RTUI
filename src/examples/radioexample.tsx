@@ -43,6 +43,34 @@ export default class ButtonExample extends React.Component {
                     <div className="code-description">水平的顶部导航菜单。</div>
                 </div>
             </div>
+            <div className="example">
+                <div className="container" style={{ paddingTop: "50px", paddingBottom: "80px", display: "block" }}>
+                    <Radio defaultValue="apple" radioStyle='button' onChange={(value) => console.log(value)}>
+                        <Option value="apple">Apple</Option>
+                        <Option value="orange">Orange</Option>
+                        <Option value="pear">Pear</Option>
+                        <Option value="disabled" disable={true}>Disabled</Option>
+                    </Radio>
+                </div>
+                <div className="code-example-box">
+                    <div className="code-title">水平导航</div>
+                    <div className="code-description">水平的顶部导航菜单。</div>
+                </div>
+            </div>
+            <div className="example">
+                <div className="container" style={{ paddingTop: "50px", paddingBottom: "80px", display: "block" }}>
+                    <Radio defaultValue="apple" radioStyle='button' vertical onChange={(value) => console.log(value)}>
+                        <Option value="apple">Apple</Option>
+                        <Option value="orange">Orange</Option>
+                        <Option value="pear">Pear</Option>
+                        <Option value="disabled" disable={true}>Disabled</Option>
+                    </Radio>
+                </div>
+                <div className="code-example-box">
+                    <div className="code-title">水平导航</div>
+                    <div className="code-description">水平的顶部导航菜单。</div>
+                </div>
+            </div>
         </div>
     }
 }

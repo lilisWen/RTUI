@@ -4,13 +4,17 @@ import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { RadioClass } from '../../styles'
 import { OptionProps } from './option'
+import { tuple } from '../../utils/type'
+
+const RadioStyles = tuple('radio', 'button')
+type RadioStyle = (typeof RadioStyles)[number]
 
 export interface RadioProps {
     value?: any
     defaultValue?: any
     onChange?: (checkedValue: any, e: React.MouseEvent) => any
     vertical?: boolean
-    radioStyle?: 'radio' | 'button'
+    radioStyle?: RadioStyle
     className?: string
     style?: React.CSSProperties
 }

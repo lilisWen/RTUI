@@ -1,19 +1,13 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import ButtonExample from './examples/buttonexample'
-import { Button, ButtonGroup } from './components/Button'
 import { Menu, MenuItem, SubMenu } from './components/menu'
-import MenuExample from './examples/menuexample'
-import InputExample from './examples/inputexample'
-import RadioExample from './examples/radioexample'
 import {
     BrowserRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
-import PopcoverExample from './examples/popcoverexample'
-import { InputClass } from './styles'
 
+import { ButtonExample, MenuExample, PopcoverExample, InputExample, RadioExample, SwitchExample } from './examples'
 ReactDom.render(
     <Router>
         <div className='App'>
@@ -35,6 +29,7 @@ ReactDom.render(
                         <MenuItem ><Link to="/popcover-example">Popcover 气泡卡片</Link></MenuItem>
                         <MenuItem ><Link to="/input-example">Input 输入框</Link></MenuItem>
                         <MenuItem ><Link to="/radio-example">Radio 单选框</Link></MenuItem>
+                        <MenuItem ><Link to="/switch-example">Switch 开关</Link></MenuItem>
                     </Menu>
                 </aside>
                 <div className="container">
@@ -43,6 +38,7 @@ ReactDom.render(
                     <Route path="/popcover-example" component={PopcoverExample}></Route>
                     <Route path="/input-example" component={InputExample}></Route>
                     <Route path="/radio-example" component={RadioExample}></Route>
+                    <Route path="/switch-example" component={SwitchExample}></Route>
                 </div>
             </main>
             <footer className="footer"></footer>

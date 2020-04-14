@@ -1,0 +1,6 @@
+export { default as MenuExample } from './menuexample'
+export { default as InputExample } from './inputexample'
+export { default as RadioExample } from './radioexample'
+export { default as ButtonExample } from './buttonexample'
+export { default as PopcoverExample } from './popcoverexample'
+export { default as SwitchExample } from './switchexample'
