@@ -7,7 +7,10 @@ import {
     Link
 } from 'react-router-dom';
 
-import { ButtonExample, MenuExample, PopcoverExample, InputExample, RadioExample, SwitchExample } from './examples'
+import {
+    ButtonExample, MenuExample, PopcoverExample, InputExample, RadioExample, SwitchExample,
+    GridExample, CheckBoxExample, CollapseExample
+} from './examples'
 ReactDom.render(
     <Router>
         <div className='App'>
@@ -30,6 +33,9 @@ ReactDom.render(
                         <MenuItem ><Link to="/input-example">Input 输入框</Link></MenuItem>
                         <MenuItem ><Link to="/radio-example">Radio 单选框</Link></MenuItem>
                         <MenuItem ><Link to="/switch-example">Switch 开关</Link></MenuItem>
+                        <MenuItem ><Link to="/grid-example">Grid 布局</Link></MenuItem>
+                        <MenuItem><Link to="/checkbox-example">CheckBox 选择框</Link></MenuItem>
+                        <MenuItem><Link to="/collapse-example">Collapse 折叠面板</Link></MenuItem>
                     </Menu>
                 </aside>
                 <div className="container">
@@ -39,6 +45,9 @@ ReactDom.render(
                     <Route path="/input-example" component={InputExample}></Route>
                     <Route path="/radio-example" component={RadioExample}></Route>
                     <Route path="/switch-example" component={SwitchExample}></Route>
+                    <Route path="/grid-example" component={GridExample}></Route>
+                    <Route path="/checkbox-example" component={CheckBoxExample}></Route>
+                    <Route path="/collapse-example" component={CollapseExample}></Route>
                 </div>
             </main>
             <footer className="footer"></footer>

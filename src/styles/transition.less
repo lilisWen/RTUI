@@ -26,3 +26,24 @@
     transform-origin: @origin;
   }
 }
+.unfold-enter{
+  opacity: 0;
+  display: none;
+  transform: scaleY(0);
+}
+.unfold-enter-active{
+  opacity: 1;
+  transform: scaleY(1);
+  transition:  transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+  transform-origin: center top;
+}
+.unfold-exit{
+  opacity: 1;
+}
+.unfold-exit-active{
+  opacity: 0;
+  display: none;
+  transform: scaleY(0);
+  transition:  transform 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms, opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+  transform-origin: center top;
+}

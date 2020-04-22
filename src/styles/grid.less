@@ -1,0 +1,105 @@
+.rt-grid-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+    .loop(24);
+    .loop(@n,@i:1) when (@i =< @n){
+        .rt-grid-col-span-@{i} {
+            width: (@i/24)*100%;
+        }
+        .loop(@n,@i+1);
+    }
+    .loop2(24);
+    .loop2(@n,@i:1) when (@i =< @n){
+        .rt-grid-col-offset-@{i} {
+            margin-left: (@i/24)*100%;
+        }
+        .loop(@n,@i+1);
+    }
+    .rt-grid-col-span-0 {
+        display: none;
+    }
+
+    // sm
+    @media (min-width:577px) {
+        .loop(24);
+        .loop(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-sm-span-@{i} {
+                width: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .loop2(24);
+        .loop2(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-sm-offset-@{i} {
+                margin-left: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .rt-grid-col-sm-span-0 {
+            display: none;
+        }
+    }
+
+    // md
+    @media (min-width: 769px) {
+        .loop(24);
+        .loop(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-md-span-@{i} {
+                width: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .loop2(24);
+        .loop2(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-md-offset-@{i} {
+                margin-left: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .rt-grid-col-md-span-0 {
+            display: none;
+        }
+    }
+
+    // lg
+    @media (min-width: 993px) {
+        .loop(24);
+        .loop(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-lg-span-@{i} {
+                width: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .loop2(24);
+        .loop2(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-lg-offset-@{i} {
+                margin-left: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .rt-grid-col-lg-span-0 {
+            display: none;
+        }
+    }
+
+    // xl
+    @media (min-width: 1201px) {
+        .loop(24);
+        .loop(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-xl-span-@{i} {
+                width: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .loop2(24);
+        .loop2(@n,@i:1) when (@i =< @n){
+            .rt-grid-col-xl-offset-@{i} {
+                margin-left: (@i/24)*100%;
+            }
+            .loop(@n,@i+1);
+        }
+        .rt-grid-col-xl-span-0 {
+            display: none;
+        }
+    }
