@@ -1,20 +1,20 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 import { ButtonClass } from '../../styles'
 
 const ButtonGroupSizes = tuple('default', 'large', 'small')
 type ButtonGroupSize = (typeof ButtonGroupSizes)[number]
 const ButtonGroupTypes = tuple('default', 'primary', 'dashed', 'success', 'danger', 'link')
 type ButtonGroupType = (typeof ButtonGroupTypes)[number]
-interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
     outline?: boolean,
     size?: ButtonGroupSize,
     className?: string,
     type?: ButtonGroupType
 }
-interface ButtonGroupState {
+export interface ButtonGroupState {
     currentIndex: number
 }
 export default class ButtonGroup extends React.Component<ButtonGroupProps, ButtonGroupState> {

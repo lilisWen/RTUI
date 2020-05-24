@@ -1,10 +1,9 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { GridClass } from '../../styles/'
 import { Option } from './Row'
 
-export interface IColProps {
+export interface ColProps {
   /*栅格间隔*/
   gutter?: number
   /*栅格占位数*/
@@ -23,7 +22,7 @@ export interface IColProps {
   style?: React.CSSProperties
 }
 
-const Col: React.FC<IColProps> = (props) => {
+const Col: React.FC<ColProps> = (props) => {
   const {
     gutter,
     span,

@@ -2,7 +2,7 @@ import * as React from 'react'
 import './importall.js'
 import classNames from 'classnames';
 import { IconClass } from '../../styles'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 
 const IconThemes = tuple('light', 'dark')
 type IconTheme = (typeof IconThemes)[number]
@@ -14,7 +14,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
     style?: React.CSSProperties;
     theme?: IconTheme;
 }
-const Icon: React.FunctionComponent<IconProps> = (props) => {
+const Icon: React.FC<IconProps> = (props) => {
     const { name, className, fill, size, theme, ...restProps } = props
     if (name === null) return null
     return (< svg

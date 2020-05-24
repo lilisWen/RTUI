@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useState, createContext } from 'react'
 import classNames from 'classnames'
-import * as PropTypes from 'prop-types'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 import { MenuClass } from '../../styles'
 import { MenuItemProps } from "./menuitem"
 

@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
-import * as PropTypes from 'prop-types'
 import arrayIsEqual from '../../utils/arrayIsEqual'
 import classNames from 'classnames'
 import { PanelProps } from './Panel'
@@ -16,12 +15,8 @@ export interface CollapseProps {
   style?: React.CSSProperties
 }
 
-export interface CollapseState {
-  derivedActiveKey: string[]
-}
 
 const Collapse: React.FC<CollapseProps> = (props) => {
-
   const { activeKey, defaultActiveKey, accordion, showArrow, onChange, className, style, children } = props
   const [derivedActiveKey, setDerivedActiveKey] = useState(defaultActiveKey || [])
   useEffect(() => {

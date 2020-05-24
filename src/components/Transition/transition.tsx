@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { CSSTransition } from 'react-transition-group'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 
 const AnitaionNames = tuple('zoom-in-top', 'zoom-in-bottom', 'zoom-in-left', 'zoom-in-right', 'unfold')
 type AnimationName = (typeof AnitaionNames)[number]
@@ -26,6 +26,7 @@ const Transition: React.FC<TransitionProps> = (props) => {
         </CSSTransition>)
 }
 Transition.defaultProps = {
+    animation: 'zoom-in-top',
     appear: true,
     unmountOnExit: true
 }

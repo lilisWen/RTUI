@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { GridClass } from '../../styles/'
+import { ColProps } from './Col'
 
 export interface RowProps {
   gutter?: number
@@ -13,19 +13,6 @@ export interface Option {
   span: number
   offset?: number
 }
-
-export interface IColProps {
-  gutter?: number
-  span?: number
-  offset?: number
-  sm?: Option
-  md?: Option
-  lg?: Option
-  xl?: Option
-  className?: string
-  style?: React.CSSProperties
-}
-
 
 const Row: React.FC<RowProps> = (props) => {
   const { gutter, className, style, children, ...rest } = props
@@ -40,7 +27,7 @@ const Row: React.FC<RowProps> = (props) => {
       }}
     >
       {React.Children.map(children, child => {
-        return React.cloneElement(child as React.ReactElement<IColProps>, {
+        return React.cloneElement(child as React.ReactElement<ColProps>, {
           gutter
         })
       })}

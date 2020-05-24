@@ -1,7 +1,6 @@
 import * as React from 'react'
-import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Icon from '../icon/Icon'
+import Icon from "../Icon/icon"
 import Transition from '../Transition/transition'
 import { CollapseClass } from '../../styles'
 

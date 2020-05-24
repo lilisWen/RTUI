@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { RadioClass } from '../../styles'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 
 const RadioStyles = tuple('radio', 'button')
 type RadioStyle = (typeof RadioStyles)[number]

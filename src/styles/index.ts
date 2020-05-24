@@ -1,4 +1,4 @@
-import generater from '../utils/classname'
+import generater from '../utils/classname22'
 import * as ButtonLess from './button.less'
 import * as IconLess from './icon.less'
 import * as MenuLess from './menu.less'
@@ -11,6 +11,10 @@ import * as SwitchLess from './switch.less'
 import * as GridLess from './grid.less'
 import * as CheckBoxLess from './checkbox.less'
 import * as CollapseLess from './collpase.less'
+import * as TabsLess from './tabs.less'
+import * as MessageLess from './message.less'
+import * as CascaderLess from './cascader.less'
+import * as CodeLess from './code.less'
 
 export const ButtonClass = generater(ButtonLess, 'button')
 export const IconClass = generater(IconLess, 'icon')
@@ -24,3 +28,7 @@ export const SwitchClass = generater(SwitchLess, 'switch')
 export const GridClass = generater(GridLess, 'grid')
 export const CheckBoxClass = generater(CheckBoxLess, 'checkbox')
 export const CollapseClass = generater(CollapseLess, 'collapse')
+export const TabsClass = generater(TabsLess, 'tabs')
+export const MessageClass = generater(MessageLess, 'message')
+export const CascaderClass = generater(CascaderLess, 'cascader')
+export const CodeClass = generater(CodeLess, 'code')

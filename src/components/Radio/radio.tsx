@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { RadioClass } from '../../styles'
 import { OptionProps } from './option'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 
 const RadioStyles = tuple('radio', 'button')
 type RadioStyle = (typeof RadioStyles)[number]
@@ -44,11 +44,11 @@ const Radio: React.FC<RadioProps> = (props) => {
         )
     }
 
-    const handleClick: (checkeValue: any, e: React.MouseEvent) => any = (checkeValue, e) => {
-        if (checkedValue !== checkeValue) {
-            setCheckedValue(checkeValue)
+    const handleClick: (value: any, e: React.MouseEvent) => any = (value, e) => {
+        if (checkedValue !== value) {
+            setCheckedValue(value)
             if (props.onChange) {
-                props.onChange(checkeValue, e)
+                props.onChange(value, e)
             }
         }
     }

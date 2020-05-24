@@ -4,7 +4,8 @@ import classNames from 'classnames'
 import { PopcoverClass } from "../../styles"
 import { useState, useEffect } from 'react'
 import Transition from '../Transition/transition'
-import classname from '../../utils/classname'
+
+
 export interface PopcoverProps {
     title: string | React.ReactNode,
     content: string | React.ReactNode,
@@ -18,8 +19,8 @@ export interface PopcoverProps {
 const Popcover: React.FC<PopcoverProps> = (props) => {
     const { content, trigger, position, className, style, title, children } = props;
     const [visible, setvisible] = useState(false);
-    const [triggerNode, setTriggerNode] = useState(null)
-    let wrapperRef: HTMLDivElement;
+    const [triggerNode, setTriggerNode] = useState(null)//点击的node
+    let wrapperRef: HTMLDivElement;//popover的包裹div节点
     let contentRef: HTMLDivElement;
     let arrowRef: HTMLDivElement;
     let timeout: any;
@@ -84,7 +85,6 @@ const Popcover: React.FC<PopcoverProps> = (props) => {
         wrapperRef = node
     }
     const saveContentRef = (node: HTMLDivElement) => {
-        // console.log(node)
         contentRef = node
     }
     const saveArrowRef = (node: HTMLDivElement) => {

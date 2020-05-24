@@ -2,7 +2,7 @@ import * as  React from 'react'
 import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { ButtonClass } from '../../styles/index'
-import { tuple } from '../../utils/type';
+import tuple from '../../utils/type';
 import Icon from "../Icon/icon"
 /*使用tuple函数生成一个类型*/
 /*
@@ -33,6 +33,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     shape?: ButtonShape;
     position?: ButtonPosition;
     outline?: boolean
+    ghost?: boolean
 }
 
 export default class button extends React.Component<ButtonProps> {
@@ -62,7 +63,7 @@ export default class button extends React.Component<ButtonProps> {
     };
 
     renderButton = () => {
-        const { children, htmlType, size, position, type, href, disable, icon, loading, shape, outline, className, ...restProps } = this.props;
+        const { children, htmlType, size, position, type, href, disable, icon, loading, shape, outline, className, ghost, ...restProps } = this.props;
         const classnames = classNames(
             ButtonClass('*', position, shape, type, {
                 large: size === 'large',
@@ -70,6 +71,7 @@ export default class button extends React.Component<ButtonProps> {
                 disable: disable,
                 outline
             }),
+            { ghost },
             className
         )
         const iconNode = <Icon name={icon} style={React.Children.count(children) >= 1 ? { marginRight: '4px' } : null}></Icon>

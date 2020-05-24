@@ -1,10 +1,13 @@
 import * as React from 'react';
 import './importall.js';
+declare const IconThemes: ["light", "dark"];
+declare type IconTheme = (typeof IconThemes)[number];
 interface IconProps extends React.SVGAttributes<SVGElement> {
     name: string;
+    size?: number;
+    className?: string;
+    style?: React.CSSProperties;
+    theme?: IconTheme;
 }
-export default class Icon extends React.Component<IconProps> {
-    handelClick: (e: any) => void;
-    render(): JSX.Element;
-}
-export {};
+declare const Icon: React.FC<IconProps>;
+export default Icon;

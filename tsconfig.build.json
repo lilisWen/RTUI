@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "module": "esnext",
+        "target": "es5",
+        "declaration": true, //为每个ts文件生成.d.ts
+        "jsx": "react",
+        "moduleResolution": "Node", //node模式引入文件
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "./typings/"
+        ]
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "./src/**/*.test.tsx",
+        "./src/**/*.example.tsx",
+        "./src/test.tsx"
+    ]
+}

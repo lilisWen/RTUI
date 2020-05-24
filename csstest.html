@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <style>
+        .layout div {
+            height: 100px;
+        }
+
+        .layout .left-right-center .left {
+            float: left;
+            width: 300px;
+            background-color: black;
+        }
+
+        .layout .left-right-center .right {
+            float: right;
+            width: 300px;
+            background-color: pink;
+        }
+
+        .layout .left-right-center .center {
+            background-color: plum;
+        }
+    </style>
+    <section class="layout">
+        <article class="left-right-center">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center">自适应宽度三栏布局
+                1.撒上滴哦撒娇的卡了解到
+                1.撒上滴哦撒娇的卡了解到
+                1.撒上滴哦撒娇的卡了解到
+            </div>
+        </article>
+
+    </section> -->
+
+    <style>
+        .layout {
+            height: 100%;
+        }
+
+        .layout .left-right-center {
+            height: 100%;
+            display: grid;
+            grid-template-rows: 100px auto 100px;
+            grid-template-columns: 100%;
+        }
+
+        .layout .left-right-center .left {
+            background-color: plum;
+        }
+
+        .layout .left-right-center .right {
+            background-color: powderblue;
+        }
+
+        .layout .left-right-center .center {
+            background-color: pink;
+        }
+    </style>
+    <section class="layout">
+        <article class="left-right-center">
+            <div class="left"></div>
+            <div class="center">自适应宽度三栏布局
+                1.撒上滴哦撒娇的卡了解到
+                1.撒上滴哦撒娇的卡了解到
+                1.撒上滴哦撒娇的卡了解到
+            </div>
+            <div class="right"></div>
+        </article>
+
+    </section>
+</body>
+
+</html>

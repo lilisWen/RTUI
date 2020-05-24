@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import * as PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { tuple } from '../../utils/type'
+import tuple from '../../utils/type'
 import { SwitchClass } from '../../styles'
 
 const SwitchSizes = tuple('small', 'default')
@@ -17,13 +17,16 @@ export interface SwitchProps {
     style?: React.CSSProperties
 }
 
-export interface SwitchState {
-    derivedChecked: boolean
-}
+
 
 const Switch: React.FC<SwitchProps> = (props) => {
-    const { defaultChecked, size, onChange, disable, className, style } = props
+    const { defaultChecked, size, onChange, checked, disable, className, style } = props
     const [derivedChecked, setDerivedChecked] = useState(defaultChecked)
+    useEffect(() => {
+        if ('checked' in props && checked !== derivedChecked) {
+            setDerivedChecked(checked)
+        }
+    })
     const handleClick: React.MouseEventHandler = (e) => {
         if (disable) {
             return

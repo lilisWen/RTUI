@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
     "jsx": "react",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -9,13 +10,14 @@
     "target": "es5",
     "strict": false,
     "allowSyntheticDefaultImports": false,
-    "esModuleInterop": false
+    "esModuleInterop": false,
   },
   "include": [
     "./src/"
   ],
   "exclude": [
     "node_modules",
-    "build"
+    "build",
+    "./src/examples/"
   ]
 }

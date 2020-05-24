@@ -4,13 +4,13 @@ declare const ButtonGroupSizes: ["default", "large", "small"];
 declare type ButtonGroupSize = (typeof ButtonGroupSizes)[number];
 declare const ButtonGroupTypes: ["default", "primary", "dashed", "success", "danger", "link"];
 declare type ButtonGroupType = (typeof ButtonGroupTypes)[number];
-interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
     outline?: boolean;
     size?: ButtonGroupSize;
     className?: string;
     type?: ButtonGroupType;
 }
-interface ButtonGroupState {
+export interface ButtonGroupState {
     currentIndex: number;
 }
 export default class ButtonGroup extends React.Component<ButtonGroupProps, ButtonGroupState> {
@@ -22,7 +22,7 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps, Butto
     static PropTypes: {
         outline: PropTypes.Requireable<boolean>;
         size: PropTypes.Requireable<"small" | "default" | "large">;
-        type: PropTypes.Requireable<"link" | "default" | "primary" | "dashed" | "success" | "danger">;
+        type: PropTypes.Requireable<"link" | "dashed" | "default" | "primary" | "success" | "danger">;
     };
     constructor(props: any);
     setCurrentIndex: (event: any) => void;

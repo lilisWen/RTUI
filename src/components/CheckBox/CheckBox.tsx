@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState, useEffect } from 'react'
-import * as PropTypes from "prop-types";
 import classNames from 'classnames'
 import { CheckBoxClass } from '../../styles/'
 
